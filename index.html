@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightAI | Synthesis Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F4F9;
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #7C3AED, #2563EB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .step-card {
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        .step-card.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .energy-line-glow {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+        }
+    </style>
+</head>
+<body class="text-slate-800 overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 glass px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-extrabold tracking-tighter text-gradient">InsightAI</div>
+        <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+            <a href="#how-it-works" class="hover:text-purple-600 transition">How it Works</a>
+        </div>
+        <button onclick="document.getElementById('search-ui').scrollIntoView({behavior: 'smooth'})" 
+                class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+            Try Now
+        </button>
+    </nav>
+
+    <header class="relative pt-40 pb-20 px-6 flex flex-col items-center text-center min-h-screen">
+        <div class="absolute top-20 left-10 w-32 h-32 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 floating"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 floating" style="animation-delay: 2s"></div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+            Read the <span class="text-gradient">Full Story</span>,<br>Not Just the Common One.
+        </h1>
+        <p class="max-w-2xl text-lg text-slate-600 mb-10 leading-relaxed">
+            In a world of echo chambers, information is everywhere but insight is rare. Most content merely repeats the same 70% of available data, leaving critical truths in the shadows. InsightAI listens for the silence—analyzing news and global discourse to pinpoint the information gaps others ignore. We synthesize these missing pieces into a single, definitive narrative. Don't just follow the story. Complete it.
+        </p>
+        <button onclick="document.getElementById('search-ui').scrollIntoView({behavior: 'smooth'})" 
+                class="group relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
+            <span class="relative px-8 py-4 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0 text-lg font-bold">
+                Experience the Edge
+            </span>
+        </button>
+    </header>
+
+    <section id="how-it-works" class="py-24 px-6 relative">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-center mb-24 tracking-tight">The <span class="text-gradient">InsightAI</span> Workflow</h2>
+            
+            <div class="relative">
+                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-slate-200 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="w-full bg-gradient-to-b from-purple-500 via-blue-500 to-green-400 energy-line-glow" style="height: 0%; transition: height 0.1s linear;"></div>
+                </div>
+
+                <div class="step-card relative flex flex-col md:flex-row items-center mb-32">
+                    <div class="md:w-1/2 md:pr-16 md:text-right pl-12 md:pl-0">
+                        <div class="glass p-6 rounded-2xl border-r-4 border-purple-500 inline-block text-left md:text-right">
+                            <span class="text-purple-600 font-mono font-bold text-xs uppercase tracking-widest">Aggregate</span>
+                            <h3 class="text-2xl font-bold text-slate-800 mt-1">Global Archive Scan</h3>
+                            <p class="text-slate-500 mt-3 leading-relaxed text-sm">Our engine ingests numerous sources to build a comprehensive baseline of existing knowledge on your chosen topic.</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-10 h-10 bg-white border-4 border-purple-500 rounded-full z-10 flex items-center justify-center shadow-lg">
+                        <i data-lucide="layers" class="w-5 h-5 text-purple-600"></i>
+                    </div>
+                    <div class="md:w-1/2"></div>
+                </div>
+
+                <div class="step-card relative flex flex-col md:flex-row items-center mb-32">
+                    <div class="md:w-1/2"></div>
+                    <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-10 h-10 bg-white border-4 border-yellow-400 rounded-full z-10 flex items-center justify-center shadow-lg">
+                        <i data-lucide="search" class="w-5 h-5 text-yellow-600"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-16 pl-12">
+                        <div class="glass p-6 rounded-2xl border-l-4 border-yellow-400">
+                            <span class="text-yellow-600 font-mono font-bold text-xs uppercase tracking-widest">Analyze</span>
+                            <h3 class="text-2xl font-bold text-slate-800 mt-1">Gap Detection</h3>
+                            <p class="text-slate-600 mt-3 leading-relaxed text-sm">We pinpoint the "Silences"—the specific perspectives and data points that have been undervalued or ignored by the mainstream.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card relative flex flex-col md:flex-row items-center mb-12">
+                    <div class="md:w-1/2 md:pr-16 md:text-right pl-12 md:pl-0">
+                        <div class="glass p-6 rounded-2xl border-r-4 border-green-500 inline-block text-left md:text-right">
+                            <span class="text-green-600 font-mono font-bold text-xs uppercase tracking-widest">Generate</span>
+                            <h3 class="text-2xl font-bold text-slate-800 mt-1">Holistic Synthesis</h3>
+                            <p class="text-slate-500 mt-3 leading-relaxed text-sm">InsightAI weaves these missing pieces into a fresh, cohesive narrative, delivering an article that provides a true competitive edge.</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-10 h-10 bg-white border-4 border-green-500 rounded-full z-10 flex items-center justify-center shadow-lg">
+                        <i data-lucide="pen-tool" class="w-5 h-5 text-green-600"></i>
+                    </div>
+                    <div class="md:w-1/2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="search-ui" class="py-32 px-6 flex flex-col items-center">
+        <div class="w-full max-w-4xl glass p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative">
+            <div class="absolute -top-6 -left-6 bg-yellow-400 p-3 rounded-lg shadow-lg rotate-12">
+                <i data-lucide="sparkles" class="text-white"></i>
+            </div>
+            
+            <h3 class="text-3xl font-bold mb-8 text-center tracking-tight">Ready to bridge the <span class="text-purple-600">Information Gap?</span></h3>
+            
+            <form id="search-form" class="relative flex items-center group">
+                <input id="topic-input" type="text" name="topic"
+                       placeholder="Enter a topic you want to explore deeply..." 
+                       class="w-full py-6 px-10 rounded-full bg-white/90 border-2 border-slate-100 focus:border-purple-500 outline-none text-xl shadow-inner transition-all">
+                <button type="submit" class="absolute right-4 bg-gradient-to-r from-green-500 to-yellow-500 p-5 rounded-full text-white hover:scale-110 transition shadow-lg active:scale-95">
+                    <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                </button>
+            </form>
+            
+            <div class="mt-10 flex flex-wrap justify-center gap-6 text-[10px] font-mono text-slate-400 uppercase tracking-[0.2em]">
+                <span class="flex items-center"><i data-lucide="shield-check" class="w-3 mr-2 text-blue-500"></i> Deep Synthesis</span>
+                <span class="flex items-center"><i data-lucide="target" class="w-3 mr-2 text-yellow-500"></i> Gap Detection</span>
+                <span class="flex items-center"><i data-lucide="zap" class="w-3 mr-2 text-green-500"></i> Instant Drafting</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-400 text-sm">
+        <div class="mb-4 font-bold text-gradient text-lg">InsightAI</div>
+        <p> Built for the next generation of information consumers. </p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Scroll Observer
+        const observerOptions = { threshold: 0.2 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.step-card').forEach(card => observer.observe(card));
+
+        // Progress Line
+        window.addEventListener('scroll', () => {
+            const section = document.getElementById('how-it-works');
+            const progress = document.getElementById('progress-bar');
+            const rect = section.getBoundingClientRect();
+            const sectionHeight = section.offsetHeight;
+            let startTrigger = window.innerHeight * 0.7;
+            let progressVal = (startTrigger - rect.top) / sectionHeight;
+            let percentage = Math.max(0, Math.min(1, progressVal)) * 100;
+            progress.style.height = percentage + "%";
+        });
+
+        // Form submission to Streamlit app
+        document.getElementById('search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const topic = document.getElementById('topic-input').value.trim();
+            if (topic) {
+                // Change this URL to your Streamlit app URL
+                // For local development: http://localhost:8501
+                // For production: your deployed Streamlit URL
+                window.location.href = `http://localhost:8501?topic=${encodeURIComponent(topic)}`;
+            }
+        });
+    </script>
+</body>
+</html>
