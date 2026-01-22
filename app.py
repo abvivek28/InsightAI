@@ -148,7 +148,7 @@ def summarize_source(title, raw_text, topic):
     """
     
     response = client.models.generate_content(
-        model="gemini-2.5-flash", 
+        model="gemini-3.0-flash-preview", 
         contents=prompt
     )
     return response.text
@@ -303,6 +303,7 @@ The final answer you give should only be the report generated.
         </div>
 
         """, unsafe_allow_html=True)
+
 
 
 
