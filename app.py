@@ -175,7 +175,7 @@ if not topic:
             Please use the landing page to submit a topic for analysis.
         </p>
         <p style='color: #94a3b8; font-size: 1rem;'>
-            ← Go back to the landing page to get started
+            ← Go back to <a href="https://insightai123.vercel.app" style='color: #7C3AED; text-decoration: underline;'>the landing page</a> to get started
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -301,4 +301,5 @@ The final answer you give should only be the report generated.
             <h3 style='color: #ef4444; margin-bottom: 1rem;'>❌ Analysis Failed</h3>
             <p style='color: #64748b;'>{str(e)}</p>
         </div>
+
         """, unsafe_allow_html=True)
