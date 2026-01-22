@@ -26,7 +26,7 @@ def perform_gap_analysis(summaries, topic):
 
     # Gemini 3 flash specific configuration
     response = client.models.generate_content(
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash",
         contents=prompt,
         config=types.GenerateContentConfig(
             temperature=0.8
@@ -36,5 +36,6 @@ def perform_gap_analysis(summaries, topic):
     # Return the full text of the report
 
     return response.text
+
 
 
