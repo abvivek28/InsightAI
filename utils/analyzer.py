@@ -17,21 +17,19 @@ def perform_gap_analysis(summaries, topic):
     {context_text}
     
     INSTRUCTIONS:
-    1. Identify 'The Over-Reported Consensus': What is everyone saying?
-    2. Identify 3 'Blind Spots': What critical technical, ethical, or human angles are completely ignored?
-    3. Write a 600-word investigative report titled 'The Missing Angle of {topic}'.
+    1. Identify the topics covered by the research summaries.
+    2. Identify 5 topics which are relevant but not covered in the research summaries.
+    3. Write a 600 word article on the topic only highlighting topics identified in step 2.
+
+    NOTE: THE ARTICLE WRITTEN BY YOU SHOULD BE THE ONLY THING GIVEN AS OUTPUT. NO OTHER MESSAGE OR EXPRESSION.
     """
 
-    # Gemini 3 Pro specific configuration
+    # Gemini 3 flash specific configuration
     response = client.models.generate_content(
         model="gemini-3-flash-preview",
         contents=prompt,
         config=types.GenerateContentConfig(
-            temperature=1.0,  # Recommended for Gemini 3 reasoning
-            thinking_config=types.ThinkingConfig(
-                thinking_level=types.ThinkingLevel.HIGH, # Maximize investigative reasoning
-                include_thoughts=True # This allows you to see the logic in the debug logs
-            )
+            temperature=0.8
         )
     )
     
